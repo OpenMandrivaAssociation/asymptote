@@ -1,5 +1,5 @@
 Name:		asymptote
-Version:	1.91
+Version:	2.04
 Release:	%mkrel 1
 Summary:	Descriptive vector graphics language for technical drawing
 License:	LGPLv3+
@@ -70,10 +70,10 @@ Features of Asymptote:
 %setup -q
 
 %build
-%configure	--enable-gc=system \
+%configure2_5x	--enable-gc=system \
 		--with-latex=%{_datadir}/tex/latex \
 		--with-context=%{_datadir}/tex/context
-%make all
+%make
 
 %install
 rm -rf %{buildroot}
