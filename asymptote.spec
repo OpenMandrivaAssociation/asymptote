@@ -1,5 +1,5 @@
 Name:		asymptote
-Version:	2.04
+Version:	2.08
 Release:	%mkrel 1
 Summary:	Descriptive vector graphics language for technical drawing
 License:	LGPLv3+
