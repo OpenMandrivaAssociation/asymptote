@@ -1,24 +1,28 @@
 Name:		asymptote
-Version:	2.08
-Release:	%mkrel 1
+Version:	2.04
+Release:	2
 Summary:	Descriptive vector graphics language for technical drawing
 License:	LGPLv3+
 Group:		Publishing
 Url:		http://asymptote.sourceforge.net/
 Source0:	http://downloads.sourceforge.net/asymptote/%{name}-%{version}.src.tgz
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
-BuildRequires:	libgc-devel >= 6.8
-BuildRequires:	fftw3-devel
-BuildRequires:	gsl-devel
-BuildRequires:	ncurses-devel
+BuildRequires:	pkgconfig(bdw-gc)
+BuildRequires:	pkgconfig(fftw3)
+BuildRequires:	pkgconfig(glut)
+BuildRequires:	pkgconfig(gsl)
+BuildRequires:	pkgconfig(ncurses)
+BuildRequires:	pkgconfig(zlib)
 BuildRequires:	readline-devel
-BuildRequires:	mesaglut-devel
-BuildRequires:	zlib-devel
 BuildRequires:	imagemagick
 BuildRequires:	tetex-latex
 BuildRequires:	texinfo
 BuildRequires:	ghostscript
+BuildRequires:	ghostscript-dvipdf
+# Just to make sure these exist
+BuildRequires:	python-imaging
+BuildRequires:	tkinter
+BuildRequires:	tetex
 
 Requires:	python-imaging
 Requires:	tkinter
@@ -76,7 +80,6 @@ Features of Asymptote:
 %make
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 
 # Create symlinks for vim / emacs
@@ -113,21 +116,13 @@ Type=Application
 Categories=Graphics;VectorGraphics;
 EOF
 
-%clean
-rm -rf %{buildroot}
-
 %post
 texhash
-%_install_info %{name}.info
-%_install_info asy-faq.info
 
 %preun
 texhash
-%_remove_install_info %{name}.info
-%_remove_install_info asy-faq.info
 
 %files
-%defattr(-,root,root,-)
 %doc BUGS ChangeLog LICENSE* README ReleaseNotes TODO
 %{_sysconfdir}/emacs/site-start.d/asy-init.el
 %{_bindir}/asy
@@ -143,3 +138,4 @@ texhash
 %{_infodir}/*.info*
 %{_mandir}/man1/asy*
 %{_mandir}/man1/xasy*
+
