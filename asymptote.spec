@@ -1,6 +1,6 @@
 Name:		asymptote
 Version:	2.04
-Release:	2
+Release:	3
 Summary:	Descriptive vector graphics language for technical drawing
 License:	LGPLv3+
 Group:		Publishing
