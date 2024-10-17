@@ -4,7 +4,7 @@ Release:	3
 Summary:	Descriptive vector graphics language for technical drawing
 License:	LGPLv3+
 Group:		Publishing
-Url:		http://asymptote.sourceforge.net/
+Url:		https://asymptote.sourceforge.net/
 Source0:	http://downloads.sourceforge.net/asymptote/%{name}-%{version}.src.tgz
 
 BuildRequires:	pkgconfig(bdw-gc)
