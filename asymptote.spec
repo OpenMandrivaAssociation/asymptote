@@ -7,6 +7,11 @@ Group:		Publishing
 Url:		https://asymptote.sourceforge.net/
 Source0:	http://downloads.sourceforge.net/asymptote/%{name}-%{version}.src.tgz
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(bdw-gc)
 BuildRequires:	pkgconfig(fftw3)
 BuildRequires:	pkgconfig(glut)
